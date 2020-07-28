@@ -5,6 +5,10 @@ RUN groupadd --gid 1000 node \
 
 ENV NODE_VERSION 12.18.2
 
+RUN apt-get update && \
+    apt-get install \
+    gnupg2
+
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
     amd64) ARCH='x64';; \
