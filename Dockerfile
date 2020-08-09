@@ -7,6 +7,7 @@ ENV NODE_VERSION 12.18.2
 
 RUN apt-get update && \
     apt-get install \
+    git \
     gnupg2 -y
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
